@@ -1,6 +1,8 @@
 const apiUrl = "https://randomuser.me/api/?";
 const listElm = document.getElementById('list');
 
+const userCountElm = document.querySelector('#user-count');
+
 
 let userArgs = []
 const displayUser = (args = userArgs) => {
@@ -35,6 +37,7 @@ const displayUser = (args = userArgs) => {
                 `
 
   })
+  userCountElm.innerHTML = args.length;
   listElm.innerHTML = str;
 }
 
@@ -61,22 +64,15 @@ const handleOnChange = e => {
 const handleOnSearch = () => {
   const searchStr = document.getElementById('search').value;
 
-  let numUser = 0;
 
   const filteredUser = userArgs.filter(item => {
     const userName = `${item?.name?.first} ${item?.name?.last}`
 
 
     if (userName.toLowerCase().includes(searchStr.toLowerCase())) {
-      numUser++;
       return item;
     }
   })
-  console.log(numUser);
-  const userNum = document.getElementById('user-number')
-  userNum.innerHTML = numUser;
-  const usernumdiv = document.getElementById('user-num-div');
-  usernumdiv.style.display = 'block';
-  // console.log(filteredUser);
+
   displayUser(filteredUser)
 }
