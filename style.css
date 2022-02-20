@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background: linear-gradient(rgb(241, 238, 69), rgb(165, 200, 5));
+  min-height: 100vh;
+}
+
+i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(105, 83, 83);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+#user-num-div {
+  display: none;
+}
