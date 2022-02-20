@@ -38,7 +38,7 @@ const displayUser = (args = userArgs) => {
   listElm.innerHTML = str;
 }
 
-const fetchUsers = (params = "results=4") => {
+const fetchUsers = (params = "results=20") => {
   fetch(apiUrl + params).then(response => response.json())
     .then(data => {
 
@@ -54,7 +54,7 @@ fetchUsers();
 
 const handleOnChange = e => {
   const value = e.value;
-  const params = "results=4&gender=" + value;
+  const params = "results=20&gender=" + value;
   fetchUsers(params)
 }
 
